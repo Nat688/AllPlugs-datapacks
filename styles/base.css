@@ -18,3 +18,13 @@ h3 { font-size: 150%; }
 h4 { font-size: 140%; }
 h5 { font-size: 125%; }
 h6 { font-size: 110%; }
+/* ===== IMAGES ===== */
+.img_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.img_deco {
+    width: 100%;
+    height: auto;
+}
