@@ -6,9 +6,8 @@ body {
     text-align: left;
 }
 /* ===== TEXT ===== */
-h1 {
+h1 h3 h5 {
     text-align: center;
-    font-family: "Papyrus";
 }
 h1 { font-size: 200%; }
 h2 { font-size: 175%; }
