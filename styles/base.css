@@ -8,6 +8,7 @@ body {
 /* ===== TEXT ===== */
 h1 {
     text-align: center;
+    font-family: "Papyrus";
 }
 h1 { font-size: 200%; }
 h2 { font-size: 175%; }
