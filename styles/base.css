@@ -9,6 +9,9 @@ body {
 h1 h3 h5 {
     text-align: center;
 }
+h1 {
+    font-family: "Papyrus";
+}
 h1 { font-size: 200%; }
 h2 { font-size: 175%; }
 h3 { font-size: 150%; }
