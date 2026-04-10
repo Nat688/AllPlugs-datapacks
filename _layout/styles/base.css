@@ -1,0 +1,14 @@
+body {
+    padding-top: 60px;
+    background-color: #252121;
+    font-size: 150%;
+    color: white;
+    text-align: left;
+}
+/* ===== TEXT ===== */
+h1, h2, h3, h5, h6, details {
+    text-align: center;
+}
+h1 { font-size: 200%; }
+h2 { font-size: 150%; }
+h3 { font-size: 125%; }
