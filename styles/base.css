@@ -8,6 +8,7 @@ body {
 /* ===== TEXT ===== */
 details > summary {
     text-align: center;
+    background-color: #1c1a1a;
 }
 h1 {
     text-align: center;
