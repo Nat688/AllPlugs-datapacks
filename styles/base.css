@@ -33,14 +33,14 @@ h6 {
 }
 /* ===== IMAGES ===== */
 .img_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 .img_deco {
-    width: 100%;
+    width: calc(25% - 10px);
     height: auto;
-    justify-self: center;
 }
 /* ===== ICON ===== */
 .icon {
