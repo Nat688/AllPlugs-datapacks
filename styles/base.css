@@ -23,7 +23,6 @@ h6 { font-size: 110%; }
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    justify-items: center;
 }
 .img_deco {
     width: 100%;
