@@ -32,6 +32,9 @@ h5 {
 h6 { 
     font-size: 110%; 
 }
+.center {
+    text-align: center;
+}
 /* ===== IMAGES ===== */
 .img_grid {
     display: flex;
