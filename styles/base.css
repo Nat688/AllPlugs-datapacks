@@ -32,6 +32,9 @@ h5 {
 h6 { 
     font-size: 110%; 
 }
+a {
+    text-decoration: none;
+}
 .center {
     text-align: center;
 }
