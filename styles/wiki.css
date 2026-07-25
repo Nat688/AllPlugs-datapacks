@@ -275,6 +275,44 @@
 	}
 }
 
+/* ===== COMMAND ===== */
+
+.command-item {
+	padding: 20px;
+	background: rgba(255,255,255,.04);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	transition: background var(--transition),transform var(--transition);
+}
+
+.command-item:hover {
+	background: rgba(255,255,255,.07);
+	transform: translateY(-2px);
+}
+
+.command-item code {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 14px;
+	border-radius: 8px;
+	background: rgba(27,217,106,.15);
+	color: var(--green);
+	font-weight: 700;
+	font-family: Consolas,monospace;
+	user-select: all;
+	cursor: pointer;
+}
+
+.command-item code:hover {
+	background: rgba(27,217,106,.25);
+}
+
+.command-item p {
+	margin-top: 12px;
+	color: var(--text-secondary);
+}
+
 /* ===== MOBILE ===== */
 
 @media(max-width:700px) {
