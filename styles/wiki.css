@@ -211,6 +211,39 @@
 	margin-bottom: 10px;
 }
 
+/* ===== SHOWCASE ===== */
+
+.showcase-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+	gap: 25px;
+}
+
+.showcase-item {
+	padding: 20px;
+	background: rgba(255,255,255,.04);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	transition: transform var(--transition),background var(--transition);
+}
+
+.showcase-item:hover {
+	transform: translateY(-5px);
+	background: rgba(255,255,255,.08);
+}
+
+.showcase-item img {
+	width: 100%;
+	display: block;
+	border-radius: 12px;
+	margin-bottom: 15px;
+}
+
+.showcase-item h4 {
+	margin-bottom: 0;
+	text-align: center;
+}
+
 /* ===== TABLE ===== */
 
 .wiki-table {
