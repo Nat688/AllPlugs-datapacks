@@ -7,20 +7,16 @@
     --surface: #111111;
     --surface-light: #181818;
     --border: rgba(255,255,255,.08);
-
     --green: #1bd96a;
     --green-dark: #0fa653;
     --blue: #3b82f6;
     --purple: #8b5cf6;
-
     --text: #ffffff;
     --text-secondary: #b5b5b5;
-
     --radius: 18px;
     --shadow: 0 15px 40px rgba(0,0,0,.45);
     --transition: .25s ease;
 }
-
 
 /* ===== RESET ===== */
 
@@ -46,7 +42,6 @@ body {
     background-attachment: fixed;
     overflow-x: hidden;
 }
-
 
 /* ===== TEXT ===== */
 
