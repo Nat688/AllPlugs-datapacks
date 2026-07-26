@@ -2,7 +2,6 @@
    NAT'S PROJECTS - RESPONSIVE
    ===================================== */
 
-
 /* ===== TABLET ===== */
 
 @media (max-width: 900px) {
@@ -26,7 +25,6 @@
     }
 }
 
-
 /* ===== MOBILE ===== */
 
 @media (max-width: 600px) {
@@ -36,13 +34,11 @@
     .navbar {
         flex-direction: column;
         gap: 15px;
-
         padding: 15px 20px;
     }
     .navbar nav {
         flex-wrap: wrap;
         justify-content: center;
-
         gap: 15px;
     }
     .hero {
@@ -50,7 +46,6 @@
     }
     .hero-buttons {
         flex-direction: column;
-
         width: 100%;
     }
     .button {
@@ -69,7 +64,6 @@
         padding: 20px;
     }
 }
-
 
 /* ===== SMALL MOBILE ===== */
 
