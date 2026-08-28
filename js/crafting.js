@@ -61,6 +61,14 @@
 		return ICON_BASE + letterRange(itemId) + "/" + itemId + ".png";
 	}
 
+	// Tag icons (the picture shown for a whole tag like "any_log" or "wool",
+	// used behind the "+N" badge) live in their own folder, named "#", as
+	// animated .gif files: ../images/item/#/<tag_name>.gif — separate from
+	// the a-f/g-m/n-t/u-z letter buckets used for single-item .png icons.
+	function tagIconPath(tagName) {
+		return ICON_BASE + "#/" + tagName + ".gif";
+	}
+
 	function setIconWithFallback(img, itemId) {
 		img.src = iconPath(itemId);
 		img.onerror = () => {
@@ -107,18 +115,18 @@
 		],
 	};
 
-	// Reads one <bc-slot> element into { items: [...] }.
-	// - <bc-slot tag="any_log"></bc-slot>       -> every item in TAGS.any_log
+	// Reads one <bc-slot> element into { items: [...], tag: string|null }.
+	// - <bc-slot tag="any_log"></bc-slot>       -> every item in TAGS.any_log, tag: "any_log"
 	// - <bc-slot>charcoal,coal</bc-slot>        -> ["charcoal", "coal"] (explicit alternatives)
 	// - <bc-slot>sand</bc-slot>                 -> ["sand"]
 	// - <bc-slot></bc-slot>                     -> [] (empty slot)
 	function readSlot(slotEl) {
 		const tag = slotEl.getAttribute("tag");
-		if (tag) return { items: TAGS[tag] || [tag] };
+		if (tag) return { items: TAGS[tag] || [tag], tag };
 
 		const text = slotEl.textContent.trim();
-		if (!text) return { items: [] };
-		return { items: text.split(",").map(s => s.trim()).filter(Boolean) };
+		if (!text) return { items: [], tag: null };
+		return { items: text.split(",").map(s => s.trim()).filter(Boolean), tag: null };
 	}
 
 	function buildSlot(cell) {
@@ -128,9 +136,20 @@
 
 		const primary = cell.items[0];
 		const img = document.createElement("img");
-		img.alt = titleCase(primary);
+		img.alt = cell.tag ? titleCase(cell.tag) : titleCase(primary);
 		img.draggable = false;
-		setIconWithFallback(img, primary);
+
+		if (cell.tag) {
+			// Tag icon (.gif) first; if it 404s, fall back to the first item's
+			// own .png icon, then to the generic fallback icon.
+			img.src = tagIconPath(cell.tag);
+			img.onerror = () => {
+				img.onerror = null;
+				setIconWithFallback(img, primary);
+			};
+		} else {
+			setIconWithFallback(img, primary);
+		}
 
 		if (cell.items.length > 1) {
 			const names = cell.items.map(titleCase).join(", ");
@@ -150,7 +169,7 @@
 	function buildCard(recipeEl) {
 		const resultId = recipeEl.getAttribute("result");
 		const count = parseInt(recipeEl.getAttribute("count"), 10) || 1;
-		const cells = Array.from(recipeEl.querySelectorAll("bc-slot")).map(readSlot);
+		const cells = Array.from(recipeEl.querySelectorAll("bc-row bc-slot")).map(readSlot);
 
 		const card = document.createElement("div");
 		card.className = "bc-card";
