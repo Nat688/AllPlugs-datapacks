@@ -1,8 +1,3 @@
-/* =====================================
-   BETTER CRAFTS - RECIPE DISPLAY
-   (extends wiki.css / theme.css variables)
-   ===================================== */
-
 .bc-toolbar {
 	display: flex;
 	align-items: center;
@@ -121,31 +116,23 @@
 	padding: 25px;
 }
 
-.bc-card {
+bc-recipe {
 	background: rgba(255,255,255,.04);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 16px;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	gap: 12px;
+	gap: 8px;
 	transition: transform var(--transition), background var(--transition);
 }
 
-.bc-card:hover {
+bc-recipe:hover {
 	transform: translateY(-4px);
 	background: rgba(255,255,255,.08);
 }
 
-.bc-card-craft {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
-
-/* mini crafting grid, minecraft-GUI-ish slots */
-.bc-mini-grid {
+bc-craft {
 	display: grid;
 	grid-template-columns: repeat(3, 26px);
 	grid-template-rows: repeat(3, 26px);
@@ -156,70 +143,59 @@
 	box-shadow:
 		inset 2px 2px 0 rgba(0,0,0,.35),
 		inset -2px -2px 0 rgba(255,255,255,.15);
+	position: relative;
 }
 
-.bc-slot {
-	position: relative;
+bc-craft img {
 	width: 26px;
 	height: 26px;
 	background: #373737;
 	border-radius: 2px;
 	box-shadow: inset 1px 1px 0 rgba(0,0,0,.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.bc-slot img {
-	width: 20px;
-	height: 20px;
 	object-fit: contain;
 	image-rendering: pixelated;
 }
 
-.bc-slot .bc-alt-badge {
-	position: absolute;
-	bottom: -3px;
-	right: -3px;
-	background: var(--blue);
-	color: white;
-	font-size: .5rem;
-	font-weight: 700;
-	line-height: 1;
-	padding: 2px 3px;
-	border-radius: 4px;
-	pointer-events: none;
+bc-craft img:not([src]) {
+	background: #373737;
+	visibility: hidden;
 }
 
-.bc-arrow {
+bc-craft::after {
+	content: "\25B6";
+	position: absolute;
+	left: calc(100% + 10px);
+	top: 50%;
+	transform: translateY(-50%);
 	color: var(--text-secondary);
 	font-size: 1.3rem;
-	flex-shrink: 0;
 }
 
-.bc-output {
+bc-result {
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 40px;
 	height: 40px;
+	margin-left: 34px;
 	background: #373737;
 	border-radius: 4px;
 	box-shadow:
 		inset 2px 2px 0 rgba(0,0,0,.35),
 		inset -2px -2px 0 rgba(255,255,255,.12);
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-shrink: 0;
 }
 
-.bc-output img {
+bc-result img {
 	width: 30px;
 	height: 30px;
 	object-fit: contain;
 	image-rendering: pixelated;
 }
 
-.bc-output .bc-count-badge {
+bc-result[count]::after {
+	content: "x" attr(count);
 	position: absolute;
 	bottom: -4px;
 	right: -6px;
@@ -230,17 +206,6 @@
 	padding: 1px 5px;
 	border-radius: 6px;
 	border: 1px solid rgba(255,255,255,.2);
-}
-
-.bc-card-name {
-	text-align: center;
-	font-size: .85rem;
-	font-weight: 600;
-	color: var(--text);
-}
-
-.bc-card.bc-hidden {
-	display: none;
 }
 
 .bc-group-hidden {
