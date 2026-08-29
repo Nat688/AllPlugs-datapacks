@@ -157,8 +157,7 @@ bc-craft img {
 }
 
 bc-craft img:not([src]) {
-	background: #373737;
-	visibility: hidden;
+	box-shadow: none;
 }
 
 bc-craft::after {
