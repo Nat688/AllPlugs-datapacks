@@ -123,6 +123,7 @@ bc-recipe {
 	padding: 16px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 8px;
 	transition: transform var(--transition), background var(--transition);
 }
