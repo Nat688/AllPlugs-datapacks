@@ -1,0 +1,230 @@
+.bc-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 25px;
+}
+
+.bc-toolbar input[type="search"] {
+	flex: 1;
+	min-width: 220px;
+	padding: 12px 16px;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	background: rgba(255,255,255,.04);
+	color: var(--text);
+	font-size: .95rem;
+}
+
+.bc-toolbar input[type="search"]:focus {
+	outline: none;
+	border-color: var(--green);
+}
+
+.bc-toolbar-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.bc-toolbar-buttons button {
+	padding: 10px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: rgba(255,255,255,.05);
+	color: var(--text-secondary);
+	cursor: pointer;
+	font-size: .85rem;
+	transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.bc-toolbar-buttons button:hover {
+	background: rgba(255,255,255,.09);
+	color: var(--text);
+	border-color: rgba(27,217,106,.4);
+}
+
+/* ===== GROUP SUMMARY EXTRA ===== */
+
+.bc-count {
+	margin-left: 10px;
+	font-size: .75rem;
+	font-weight: 600;
+	color: var(--text-secondary);
+	background: rgba(255,255,255,.08);
+	border-radius: 999px;
+	padding: 3px 10px;
+	vertical-align: middle;
+}
+
+.bc-group-actions {
+	display: inline-flex;
+	gap: 8px;
+	float: right;
+}
+
+.bc-group-actions button {
+	font-size: .7rem;
+	padding: 5px 10px;
+	border-radius: 8px;
+	border: 1px solid var(--border);
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.bc-enable-btn {
+	background: rgba(27,217,106,.12);
+	color: var(--green);
+}
+
+.bc-enable-btn:hover {
+	background: rgba(27,217,106,.22);
+}
+
+.bc-disable-btn {
+	background: rgba(255,90,90,.12);
+	color: #ff6b6b;
+}
+
+.bc-disable-btn:hover {
+	background: rgba(255,90,90,.22);
+}
+
+.bc-cmd-line {
+	padding: 14px 20px 0;
+}
+
+.bc-cmd-line code {
+	display: inline-block;
+	padding: 6px 10px;
+	border-radius: 6px;
+	background: rgba(255,255,255,.06);
+	color: var(--text-secondary);
+	font-family: Consolas, monospace;
+	font-size: .78rem;
+	margin-right: 8px;
+	user-select: all;
+}
+
+/* ===== RECIPE GRID ===== */
+
+.bc-recipe-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+	gap: 18px;
+	padding: 25px;
+}
+
+bc-recipe {
+	background: rgba(255,255,255,.04);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	transition: transform var(--transition), background var(--transition);
+}
+
+bc-recipe:hover {
+	transform: translateY(-4px);
+	background: rgba(255,255,255,.08);
+}
+
+bc-craft {
+	display: grid;
+	grid-template-columns: repeat(3, 26px);
+	grid-template-rows: repeat(3, 26px);
+	gap: 3px;
+	padding: 6px;
+	background: #8b8b8b;
+	border-radius: 4px;
+	box-shadow:
+		inset 2px 2px 0 rgba(0,0,0,.35),
+		inset -2px -2px 0 rgba(255,255,255,.15);
+	position: relative;
+}
+
+bc-craft img {
+	width: 26px;
+	height: 26px;
+	background: #373737;
+	border-radius: 2px;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,.5);
+	object-fit: contain;
+	image-rendering: pixelated;
+}
+
+bc-craft img:not([src]) {
+	box-shadow: none;
+}
+
+bc-craft::after {
+	content: "\25B6";
+	position: absolute;
+	left: calc(100% + 10px);
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--text-secondary);
+	font-size: 1.3rem;
+}
+
+bc-result {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin-left: 34px;
+	background: #373737;
+	border-radius: 4px;
+	box-shadow:
+		inset 2px 2px 0 rgba(0,0,0,.35),
+		inset -2px -2px 0 rgba(255,255,255,.12);
+	flex-shrink: 0;
+}
+
+bc-result img {
+	width: 30px;
+	height: 30px;
+	object-fit: contain;
+	image-rendering: pixelated;
+}
+
+bc-result[count]::after {
+	content: "x" attr(count);
+	position: absolute;
+	bottom: -4px;
+	right: -6px;
+	background: rgba(0,0,0,.75);
+	color: #fff;
+	font-size: .65rem;
+	font-weight: 700;
+	padding: 1px 5px;
+	border-radius: 6px;
+	border: 1px solid rgba(255,255,255,.2);
+}
+
+.bc-group-hidden {
+	display: none;
+}
+
+.bc-empty-msg {
+	text-align: center;
+	color: var(--text-secondary);
+	padding: 30px;
+	font-size: .95rem;
+}
+
+@media (max-width: 700px) {
+	.bc-recipe-list {
+		grid-template-columns: 1fr;
+	}
+	.bc-group-actions {
+		float: none;
+		margin-top: 10px;
+	}
+}

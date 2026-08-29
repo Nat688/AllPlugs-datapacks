@@ -1,0 +1,43 @@
+/* =====================================
+   NAT'S PROJECTS - HOME STYLE
+   ===================================== */
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeUp .8s ease;
+}
+
+.hero h1 {
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        var(--blue),
+        var(--purple)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    margin-top: 25px;
+    font-size: 1.3rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
