@@ -45,8 +45,6 @@
 	border-color: rgba(27,217,106,.4);
 }
 
-/* ===== GROUP SUMMARY EXTRA ===== */
-
 .bc-count {
 	margin-left: 10px;
 	font-size: .75rem;
@@ -106,8 +104,6 @@
 	margin-right: 8px;
 	user-select: all;
 }
-
-/* ===== RECIPE GRID ===== */
 
 .bc-recipe-list {
 	display: grid;
