@@ -474,3 +474,45 @@ bf-result[count]::after {
 		grid-template-columns: 1fr;
 	}
 }
+
+.bf-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 25px;
+}
+
+.bf-toolbar-buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.bf-toolbar-buttons button {
+	padding: 10px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: rgba(255,255,255,.05);
+	color: var(--text-secondary);
+	cursor: pointer;
+	font-size: .85rem;
+	transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.bf-toolbar-buttons button:hover {
+	background: rgba(255,255,255,.09);
+	color: var(--text);
+	border-color: rgba(27,217,106,.4);
+}
+
+.bf-count {
+	margin-left: 10px;
+	font-size: .75rem;
+	font-weight: 600;
+	color: var(--text-secondary);
+	background: rgba(255,255,255,.08);
+	border-radius: 999px;
+	padding: 3px 10px;
+	vertical-align: middle;
+}
