@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="../styles/animations.css">
 	<link rel="stylesheet" href="../styles/responsive.css">
 	<link rel="stylesheet" href="../styles/wiki.css">
+	<link rel="stylesheet" href="../styles/smelting.css">
 </head>
 <body class="page-load">
 	<header class="navbar">
@@ -79,36 +80,102 @@
 
 			<section id="recipes" class="wiki-section fade-up">
 				<h2>Recipes</h2>
-				<details class="recipe-group" open>
-					<summary>All Recipes</summary>
-					<div class="recipe-list">
-						<div class="recipe-item">
-							<img src="../images/better-furnaces/arrows.gif" alt="Arrows">
-							<h4>Arrows <span class="tag-new">NEW</span></h4>
-						</div>
-            			<div class="recipe-item">
-							<img src="../images/better-furnaces/bamboo_blocks.gif" alt="Bamboo Block">
-							<h4>Bamboo Block</h4>
-						</div>
-            			<div class="recipe-item">
-							<img src="../images/better-furnaces/raw_blocks.gif" alt="Raw Block">
-							<h4>Raw Block</h4>
-						</div>
-            			<div class="recipe-item">
-							<img src="../images/better-furnaces/rotten_flesh.png" alt="Rotten Flesh">
-							<h4>Rotten Flesh</h4>
-						</div>
-            			<div class="recipe-item">
-							<img src="../images/better-furnaces/saplings.gif" alt="Saplings">
-							<h4>Saplings</h4>
-						</div>
+				<div class="bf-toolbar">
+					<div class="bf-toolbar-buttons">
+						<button type="button" id="bf-expand-all">Expand all</button>
+						<button type="button" id="bf-collapse-all">Collapse all</button>
 					</div>
-						<!-- === TEMPLATE ===
-						<div class="recipe-item">
-							<img src="../images/better-furnaces/X.png" alt="X">
-							<h4></h4>
-						</div> -->
+				</div>
+				<div id="bf-recipes-root">
+				<details class="recipe-group" data-group="arrows">
+					<summary>Arrows <span class="bf-count">1 recipe</span></summary>
+					<div class="bf-recipe-list">
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/tags/arrows.gif">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/g-m/iron_nugget.png">
+							</bf-result>
+						</bf-recipe>
+					</div>
 				</details>
+				<details class="recipe-group" data-group="bamboo_blocks">
+					<summary>Bamboo Blocks <span class="bf-count">1 recipe</span></summary>
+					<div class="bf-recipe-list">
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/tags/bamboo_blocks.gif">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/a-f/charcoal.png">
+							</bf-result>
+						</bf-recipe>
+					</div>
+				</details>
+				<details class="recipe-group" data-group="raw_blocks">
+					<summary>Raw Blocks <span class="bf-count">3 recipes</span></summary>
+					<div class="bf-recipe-list">
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/n-t/raw_copper_block.png">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/a-f/copper_block.png">
+							</bf-result>
+						</bf-recipe>
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/n-t/raw_iron_block.png">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/g-m/iron_block.png">
+							</bf-result>
+						</bf-recipe>
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/n-t/raw_gold_block.png">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/g-m/gold_block.png">
+							</bf-result>
+						</bf-recipe>
+					</div>
+				</details>
+				<details class="recipe-group" data-group="rotten_flesh">
+					<summary>Rotten Flesh <span class="bf-count">1 recipe</span></summary>
+					<div class="bf-recipe-list">
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/n-t/rotten_flesh.png">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/g-m/leather.png">
+							</bf-result>
+						</bf-recipe>
+					</div>
+				</details>
+				<details class="recipe-group" data-group="saplings">
+					<summary>Saplings <span class="bf-count">1 recipe</span></summary>
+					<div class="bf-recipe-list">
+						<bf-recipe>
+							<bf-smelt>
+								<img src="../images/item/tags/saplings.gif">
+								<img>
+							</bf-smelt>
+							<bf-result>
+								<img src="../images/item/a-f/dead_bush.png">
+							</bf-result>
+						</bf-recipe>
+					</div>
+				</details>
+				</div>
 			</section>
 
 			<section id="commands" class="wiki-section fade-up">
@@ -182,6 +249,7 @@
 	
 	<script src="../js/animations.js"></script>
 	<script src="../js/wiki.js"></script>
+	<script src="../js/smelting.js"></script>
 	
 </body>
 </html>
