@@ -1,0 +1,123 @@
+.changelog-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin-bottom: 30px;
+}
+
+.changelog-count {
+	color: var(--text-secondary);
+	font-size: .9rem;
+}
+
+#changelog-filter {
+	padding: 10px 16px;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	color: var(--text);
+	font-size: .9rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: border-color var(--transition), background var(--transition);
+}
+
+#changelog-filter:hover {
+	border-color: rgba(27,217,106,.4);
+	background: rgba(255,255,255,.05);
+}
+
+#changelog-filter optgroup {
+	background: var(--surface);
+	color: var(--text-secondary);
+	font-style: normal;
+	font-weight: 700;
+}
+
+#changelog-filter option {
+	background: var(--surface);
+	color: var(--text);
+}
+
+#changelog-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.changelog-entry {
+	background: rgba(255,255,255,.04);
+	border: 1px solid var(--border);
+	border-left: 4px solid var(--border);
+	border-radius: var(--radius);
+	padding: 22px 25px;
+	transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.changelog-entry:hover {
+	transform: translateY(-4px);
+	background: rgba(255,255,255,.07);
+}
+
+.changelog-entry[data-status="alpha"] {
+	border-left-color: #ff496e;
+}
+
+.changelog-entry[data-status="beta"] {
+	border-left-color: #ffa347;
+}
+
+.changelog-entry[data-status="release"] {
+	border-left-color: var(--green);
+}
+
+.changelog-meta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.changelog-date {
+	color: var(--text-secondary);
+	font-size: .8rem;
+	font-family: Consolas, monospace;
+}
+
+.changelog-entry h3 {
+	margin: 4px 0 12px;
+}
+
+.changelog-entry ul {
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.changelog-entry li {
+	color: var(--text-secondary);
+}
+
+.changelog-hidden {
+	display: none !important;
+}
+
+.changelog-empty {
+	text-align: center;
+	color: var(--text-secondary);
+	padding: 50px 20px;
+}
+
+@media (max-width: 700px) {
+	.changelog-toolbar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	#changelog-filter {
+		width: 100%;
+	}
+}
